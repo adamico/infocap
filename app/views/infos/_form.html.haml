@@ -1,5 +1,18 @@
 - semantic_form_for @info do |f|
   - f.inputs do
     = f.input :name
+    = f.input :notes
+    = f.input :url
+
+  - f.inputs :name => "Téléphones" do
+    = f.input :telephone, :label => "Téléphone"
+    = f.input :raccourci
+    = f.input :fax
+
+  - f.inputs :name => "Adresse" do
+    = f.input :adresse
+    = f.input :cp
+    = f.input :ville
+
   - f.buttons do
     = f.commit_button "Submit"

@@ -4,12 +4,12 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+ENV["RAILS_ENV"] ||= "cucumber"
+
 require 'rubygems'
 require 'spork'
-require 'spec/spork_hack'
  
 Spork.prefork do
-  ENV["RAILS_ENV"] ||= "cucumber"
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
   
   require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
@@ -65,4 +65,5 @@ Spork.each_run do
   # http://github.com/bmabey/database_cleaner for more info.
   require 'database_cleaner'
   DatabaseCleaner.strategy = :truncation
+
 end

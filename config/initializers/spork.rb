@@ -1,0 +1,2 @@
+if defined?(Spork)
+end

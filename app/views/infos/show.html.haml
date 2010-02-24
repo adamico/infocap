@@ -1,16 +1,22 @@
 - title @info.name
 
-- unless @info.phone_numbers.blank?
-  %table
-    - @info.phone_numbers.each do |n|
-      %tr
-        %td
-          = n.thenumber
-        %td
-          = link_to "Edit", edit_info_phone_number_path(n.info, n)
-
-%p
-  = link_to "New PhoneNumber", new_info_phone_number_path(@info)
+%table#info_details
+  %tr
+    %th Notes
+    %td :
+    %td= @info.notes
+  %tr
+    %th Téléphone(s)
+    %td :
+    %td= @info.phone_numbers_list
+  %tr
+    %th Adresse
+    %td :
+    %td= @info.full_address
+  %tr
+    %th Site Web
+    %td :
+    %td= @info.url
 
 %p
   = link_to "Edit", edit_info_path(@info)
