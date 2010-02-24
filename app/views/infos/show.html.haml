@@ -1,0 +1,20 @@
+- title @info.name
+
+- unless @info.phone_numbers.blank?
+  %table
+    - @info.phone_numbers.each do |n|
+      %tr
+        %td
+          = n.thenumber
+        %td
+          = link_to "Edit", edit_info_phone_number_path(n.info, n)
+
+%p
+  = link_to "New PhoneNumber", new_info_phone_number_path(@info)
+
+%p
+  = link_to "Edit", edit_info_path(@info)
+  |
+  = link_to "Destroy", @info, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", infos_path
