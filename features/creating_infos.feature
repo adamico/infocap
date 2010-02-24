@@ -81,5 +81,5 @@ Feature: creating infos
       And I fill in "Nom de catégorie" with "lacategorie"
       And I submit
     Then a category should exist with name: "lacategorie"
-      And I should see "Categorie :"
+      And I should see "Catégorie :"
       And I should see "lacategorie"

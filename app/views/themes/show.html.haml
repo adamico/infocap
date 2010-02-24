@@ -1,0 +1,12 @@
+- title "Theme"
+
+%p
+  %strong Name:
+  =h @theme.name
+
+%p
+  = link_to "Edit", edit_theme_path(@theme)
+  |
+  = link_to "Destroy", @theme, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", themes_path

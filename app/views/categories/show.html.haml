@@ -1,5 +1,7 @@
 - title "Category"
 
+%h3= "Thème : #{@category.theme.name}" unless @category.theme.blank?
+
 %p
   %strong Name:
   =h @category.name

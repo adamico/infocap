@@ -1,18 +1,18 @@
-one:
-  name: MyString
+require File.dirname(__FILE__) + '/../spec_helper'
 
-two:
-  name: MyString
-
+describe Theme do
+  it "should be valid" do
+    Theme.new.should be_valid
+  end
+end
 
 # == Schema Information
 #
-# Table name: categories
+# Table name: themes
 #
 #  id         :integer         not null, primary key
 #  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  theme_id   :integer
 #
 

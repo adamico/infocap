@@ -1,8 +1,7 @@
-- form_for @category do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.submit "Submit"
+- semantic_form_for @category do |f|
+  - f.inputs do
+    = f.input :name
+    = f.input :theme, :label => "Thème"
+    = f.input :new_theme_name, :label => "Nom de thème", :hint => "ou en créer un nouveau"
+  - f.buttons do
+    = f.commit_button "Submit"
