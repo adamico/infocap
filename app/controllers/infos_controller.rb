@@ -1,10 +1,11 @@
 class InfosController < ApplicationController
+  before_filter :find_info, :except => [:index, :new, :create]
+
   def index
     @infos = Info.all
   end
   
   def show
-    @info = Info.find(params[:id])
   end
   
   def new
@@ -22,11 +23,9 @@ class InfosController < ApplicationController
   end
   
   def edit
-    @info = Info.find(params[:id])
   end
   
   def update
-    @info = Info.find(params[:id])
     if @info.update_attributes(params[:info])
       flash[:notice] = "Successfully updated info."
       redirect_to @info
@@ -36,9 +35,13 @@ class InfosController < ApplicationController
   end
   
   def destroy
-    @info = Info.find(params[:id])
     @info.destroy
     flash[:notice] = "Successfully destroyed info."
     redirect_to infos_url
+  end
+
+  private
+  def find_info
+    @info = Info.find(params[:id])
   end
 end

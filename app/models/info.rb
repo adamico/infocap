@@ -1,4 +1,6 @@
-class Info
-  include MongoMapper::Document
-  key :name, String, :required => true
+class Info < ActiveRecord::Base
+  attr_accessible :name
+  validates_presence_of :name
+  has_many :phone_numbers
+  
 end

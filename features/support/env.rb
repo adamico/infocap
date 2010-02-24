@@ -59,8 +59,4 @@ Spork.each_run do
   # http://github.com/bmabey/database_cleaner for more info.
   require 'database_cleaner'
   DatabaseCleaner.strategy = :truncation
-
-  Before do
-    Info.delete_all
-  end
 end
