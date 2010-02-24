@@ -6,6 +6,7 @@
 
 require 'rubygems'
 require 'spork'
+require 'spec/spork_hack'
  
 Spork.prefork do
   ENV["RAILS_ENV"] ||= "cucumber"
@@ -27,9 +28,14 @@ Spork.prefork do
   end
   
 
+  require 'factory_girl'
+  if defined?(Factory)
+    Spork.trap_class_method(Factory, :find_definitions)
+  end
 end
  
 Spork.each_run do
+  require 'spec/factories'
   # If you set this to false, any error raised from within your app will bubble 
   # up to your step definition and out to cucumber unless you catch it somewhere
   # on the way. You can make Rails rescue errors and render error pages on a
