@@ -1,5 +1,7 @@
 - title @info.name
 
+%h3= "Categorie : #{@info.category.name}" unless @info.category.blank?
+
 %table#info_details
   %tr
     %th Notes

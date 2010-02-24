@@ -11,12 +11,14 @@ Feature: creating infos
 
   Scenario: can't create infos without name
     When I go to the new info page
+      And I fill in "Nom de catégorie" with "test"
       And I submit
     Then I should not have infos
 
   Scenario: creating infos with all details
     When I go to the new info page
     And I fill in the following:
+      | Nom de catégorie | categorie  |
       | Name      | Internes                |
       | Notes     | notes                   |
       | Url       | http://www.site.domain  |
@@ -72,3 +74,12 @@ Feature: creating infos
       And I submit
     Then I should see "Adresse :"
       And I should see "15, rue des Lilas 69001 - Lyon"
+
+  Scenario: adding a new category to info
+    Given an info exists
+    When I go to the info's edit page
+      And I fill in "Nom de catégorie" with "lacategorie"
+      And I submit
+    Then a category should exist with name: "lacategorie"
+      And I should see "Categorie :"
+      And I should see "lacategorie"

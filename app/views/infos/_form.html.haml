@@ -1,6 +1,8 @@
 - semantic_form_for @info do |f|
   - f.inputs do
     = f.input :name
+    = f.input :category, :label => "Catégorie", :input_html => {:prompt => "Selectionner une catégorie"}
+    = f.input :new_category_name, :label => "Nom de catégorie", :hint  => "ou en créer une nouvelle"
     = f.input :notes
     = f.input :url
 
@@ -14,5 +16,6 @@
     = f.input :cp
     = f.input :ville
 
+   
   - f.buttons do
     = f.commit_button "Submit"
