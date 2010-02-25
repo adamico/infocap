@@ -1,8 +1,10 @@
-- title "Theme"
+- title @theme.name
 
-%p
-  %strong Name:
-  =h @theme.name
+- if !@theme.categories.blank?
+  - for categorie in @theme.categories
+    = link_to h(categorie.name), categorie
+- else
+  Pas de catégories pour ce thème
 
 %p
   = link_to "Edit", edit_theme_path(@theme)

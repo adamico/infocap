@@ -1,10 +1,12 @@
-- title "Category"
+- title @category.name
 
 %h3= "Thème : #{@category.theme.name}" unless @category.theme.blank?
 
-%p
-  %strong Name:
-  =h @category.name
+- if !@category.infos.blank?
+  - for info in @category.infos
+    = link_to h(info.name), info
+- else
+  Pas d'infos pour cette catégorie
 
 %p
   = link_to "Edit", edit_category_path(@category)
