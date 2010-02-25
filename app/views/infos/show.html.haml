@@ -1,6 +1,8 @@
 - title @info.name
 
-%h3= "Catégorie : #{@info.category.name}" unless @info.category.blank?
+%h3
+  = "Catégorie : "
+  = link_to(h(@info.category.name), category_path(@info.category)) unless @info.category.blank?
 
 %table#info_details
   %tr

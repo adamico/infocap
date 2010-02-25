@@ -1,10 +1,14 @@
 - title @category.name
 
-%h3= "Thème : #{@category.theme.name}" unless @category.theme.blank?
+%h3
+  = "Thème : "
+  = link_to(h(@category.theme.name), theme_path(@category.theme)) unless @category.theme.blank?
 
 - if !@category.infos.blank?
-  - for info in @category.infos
-    = link_to h(info.name), info
+  %h3 Liste des infos
+  %ul
+    - for info in @category.infos
+      %li= link_to h(info.name), info
 - else
   Pas d'infos pour cette catégorie
 

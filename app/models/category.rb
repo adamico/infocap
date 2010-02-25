@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :new_theme_name
+  attr_accessible :name, :new_theme_name, :theme_id
   validates_presence_of :name
 
   has_many :infos

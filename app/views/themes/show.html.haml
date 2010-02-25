@@ -1,8 +1,10 @@
 - title @theme.name
 
 - if !@theme.categories.blank?
-  - for categorie in @theme.categories
-    = link_to h(categorie.name), categorie
+  %h3 Liste des catégories
+  %ul
+    - for categorie in @theme.categories
+      %li= link_to h(categorie.name), categorie
 - else
   Pas de catégories pour ce thème
 
