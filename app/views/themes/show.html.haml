@@ -1,5 +1,7 @@
 - title @theme.name
 
+%h3= link_to h("#{@theme.name} (PDF)"), formatted_theme_path(@theme, :pdf)
+
 - if !@theme.categories.blank?
   %h3 Liste des catégories
   %ul
