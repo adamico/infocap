@@ -1,6 +1,6 @@
 # Edit this Gemfile to bundle your application's dependencies.
 source 'http://gemcutter.org'
-
+git 'git://github.com/dvyjones/nifty-generators.git', :branch => 'rails3'
 
 gem "rails", "3.0.0.beta"
 
@@ -22,3 +22,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # group :test do
 #   gem "webrat"
 # end
+#
+
+gem "haml"
+gem 'nifty-generators'

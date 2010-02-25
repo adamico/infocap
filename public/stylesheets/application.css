@@ -44,23 +44,20 @@ a {
   padding-bottom: 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0; }
-#errorExplanation h2 {
-  text-align: left;
-  padding: 5px 5px 5px 15px;
-  margin: 0;
-  font-weight: bold;
-  font-size: 12px;
-  background-color: #c00;
-  color: #fff; }
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 8px; }
-#errorExplanation ul {
-  margin: 2px 24px; }
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: disc; }
-
-/* My personal */
-table#info_details tbody tr th { text-align: right;}
+  #errorExplanation h2 {
+    text-align: left;
+    padding: 5px 5px 5px 15px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #c00;
+    color: #fff; }
+  #errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 8px; }
+  #errorExplanation ul {
+    margin: 2px 24px; }
+    #errorExplanation ul li {
+      font-size: 12px;
+      list-style: disc; }
