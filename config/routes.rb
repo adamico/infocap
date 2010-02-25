@@ -1,10 +1,6 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :themes
-
-  map.resources :categories
-
-  map.resources :categories
-
-  map.resources :infos
-  map.root :controller => 'welcome'
+Infocap::Application.routes.draw do
+  resources :themes
+  resources :categories
+  resources :infos
+  match '/' => 'welcome#index'
 end

@@ -1,13 +1,5 @@
-.DS_Store
-**/.DS_Store
-*.swp
-*~
-log/*
-tmp/*
-tmp/**/*
-config/database.yml
-rerun.txt
-coverage/*
-coverage/**/*
-vendor/gems/*
+.bundle
 db/*.sqlite3
+log/*.log
+tmp/**/*
+*.swp
