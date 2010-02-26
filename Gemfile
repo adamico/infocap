@@ -1,6 +1,6 @@
 # Edit this Gemfile to bundle your application's dependencies.
 source 'http://gemcutter.org'
-git 'git://github.com/dvyjones/nifty-generators.git', :branch => 'rails3'
+git 'http://github.com/dvyjones/nifty-generators.git', :branch => 'rails3'
 
 gem "rails", "3.0.0.beta"
 
