@@ -1,10 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :themes
-
-  map.resources :categories
-
-  map.resources :categories
-
-  map.resources :infos
+  map.resources :themes, :categories, :infos
+  map.admin '/admin', :controller => 'welcome', :action => 'admin'
   map.root :controller => 'welcome'
 end

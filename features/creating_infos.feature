@@ -30,10 +30,10 @@ Feature: creating infos
       | Ville     | Lyon                    |
     And I submit
     Then I should see details table
-      | Notes     | : | notes                                           |
+      | Notes       | : | notes                                           |
       | Téléphone(s)| : | 0478787878, 303030 (raccourci), 0404040404 (fax)|
-      | Adresse   | : | 15, rue bof 696969 - Lyon                       |
-      | Site Web  | : | http://www.site.domain                          |
+      | Adresse     | : | 15, rue bof 696969 - Lyon                       |
+      | Site Web    | : | http://www.site.domain                          |
 
   Scenario: adding notes to info
     Given an info exists

@@ -11,6 +11,8 @@
     = yield(:head)
   
   %body
+    #header
+      = link_to "InfoCAP", root_path
     #container
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
