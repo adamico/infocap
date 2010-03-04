@@ -1,8 +1,9 @@
 class WelcomeController < ApplicationController
-  def home
+  def admin
   end
 
-  def indice
+  def index
+    @themes = Theme.all
   end
 
 end
