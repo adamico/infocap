@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
+  before_filter :find_category, :except => [:index, :new, :create]
   def index
     @categories = Category.all
   end
   
   def show
-    @category = Category.find(params[:id])
   end
   
   def new
@@ -22,11 +22,9 @@ class CategoriesController < ApplicationController
   end
   
   def edit
-    @category = Category.find(params[:id])
   end
   
   def update
-    @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
       flash[:notice] = "Successfully updated category."
       redirect_to @category
@@ -36,9 +34,14 @@ class CategoriesController < ApplicationController
   end
   
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
     flash[:notice] = "Successfully destroyed category."
     redirect_to categories_url
+  end
+
+  private
+
+  def find_category
+    @category = Category.find(params[:id])
   end
 end

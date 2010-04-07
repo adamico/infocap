@@ -5,6 +5,8 @@ two:
   name: MyString
 
 
+
+
 # == Schema Information
 #
 # Table name: categories
@@ -13,6 +15,6 @@ two:
 #  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  theme_id   :integer
+#  parent_id  :integer
 #
 

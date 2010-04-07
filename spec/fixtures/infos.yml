@@ -4,6 +4,8 @@ one:
 two:
   name: MyString
 
+
+
 # == Schema Information
 #
 # Table name: infos

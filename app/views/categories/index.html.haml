@@ -2,11 +2,12 @@
 
 %table
   %tr
+    %th Parent
     %th Name
   - for category in @categories
     %tr
-      %td= h category.name
-      %td= link_to 'Show', category
+      %td= h category.parent_id
+      %td= link_to h(category.name), category
       %td= link_to 'Edit', edit_category_path(category)
       %td= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
 

@@ -1,16 +1,21 @@
-- title @category.name
+- title @category.name, false
 
-%h3
-  = "Thème : "
-  = link_to(h(@category.theme.name), theme_path(@category.theme)) unless @category.theme.blank?
+%p
+  - unless @category.ancestors.reverse.blank?
+    - for category in @category.ancestors.reverse
+      = link_to h(category.name), category
+      &gt;
 
-- if !@category.infos.blank?
-  %h3 Liste des infos
-  %ul
-    - for info in @category.infos
-      %li= link_to h(info.name), info
-- else
-  Pas d'infos pour cette catégorie
+%h1= h @category.name
+
+- unless @category.children.empty?
+  %ul#submenu
+    - for category in @category.children
+      %li= link_to h(category.name), category
+
+- unless @category.infos.empty?
+  %ul#infos
+    = render @category.infos
 
 %p
   = link_to "Edit", edit_category_path(@category)

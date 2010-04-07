@@ -1,7 +1,6 @@
 - semantic_form_for @category do |f|
   - f.inputs do
     = f.input :name
-    = f.input :theme, :label => "Thème"
-    = f.input :new_theme_name, :label => "Nom de thème", :hint => "ou en créer un nouveau"
+    = f.input :parent_id, :collection => Category.all(:order => 'name')
   - f.buttons do
     = f.commit_button "Submit"

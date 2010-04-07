@@ -1,8 +1,4 @@
 class Info < ActiveRecord::Base
-  attr_accessible :name, :notes, :url, :category_id, :new_category_name
-  attr_accessible :telephone, :fax, :raccourci
-  attr_accessible :adresse, :cp, :ville
-
   validates_presence_of :name
 
   belongs_to :category
@@ -30,6 +26,8 @@ class Info < ActiveRecord::Base
     create_category(:name => new_category_name) unless new_category_name.blank?
   end
 end
+
+
 
 # == Schema Information
 #

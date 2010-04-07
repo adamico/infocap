@@ -6,6 +6,8 @@ describe Info do
   end
 end
 
+
+
 # == Schema Information
 #
 # Table name: infos

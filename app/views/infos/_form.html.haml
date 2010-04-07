@@ -1,8 +1,8 @@
 - semantic_form_for @info do |f|
   - f.inputs do
     = f.input :name
-    = f.input :category, :label => "Catégorie", :input_html => {:prompt => "Selectionner une catégorie"}
-    = f.input :new_category_name, :label => "Nom de catégorie", :hint  => "ou en créer une nouvelle"
+    = f.input :sub_category, :label => "Sous-catégorie"
+    = f.input :new_sub_category_name, :label => "Sous-catégorie"
     = f.input :notes
     = f.input :url
 

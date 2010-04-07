@@ -1,2 +1,14 @@
 %li
-  = link_to category.name, category_path(category)
+  = h category.name
+  = link_to 'Edit', edit_category_path(category)
+  |
+  = link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
+  - if category.sub_categories.blank?
+    %h4 Sous-catégories
+    %ul
+      = render category.sub_categories
+  - else
+    %ul
+      %li Pas de sous-catégories pour cette catégorie
+  %ul
+    %li= link_to "Rajouter une sous-catégorie", new_category_sub_category_path(category)

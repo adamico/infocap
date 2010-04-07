@@ -7,6 +7,8 @@ describe Category do
 end
 
 
+
+
 # == Schema Information
 #
 # Table name: categories
@@ -15,6 +17,6 @@ end
 #  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  theme_id   :integer
+#  parent_id  :integer
 #
 

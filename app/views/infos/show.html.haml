@@ -1,8 +1,8 @@
 - title @info.name
 
 %h3
-  = "Catégorie : "
-  = link_to(h(@info.category.name), category_path(@info.category)) unless @info.category.blank?
+  = "Sous-Catégorie : "
+  = link_to(h(@info.sub_category.name), sub_category_path(@info.sub_category)) unless @info.sub_category.blank?
 
 %table#info_details
   %tr
