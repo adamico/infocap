@@ -1,0 +1,32 @@
+%li
+  %b= h info.name
+  = link_to "Edit", edit_category_info_path(@category, info)
+  |
+  = link_to "Destroy", [@category, info], :confirm => 'Are you sure?', :method => :delete
+
+  %table#info_details
+    %tr
+      - unless info.person.blank?
+        %th Interlocuteur
+        %td :
+        %td= info.person
+    %tr
+      - unless info.notes.blank?
+        %th Notes
+        %td :
+        %td= info.notes
+    %tr
+      - unless info.phone_numbers_list.blank?
+        %th Téléphone(s)
+        %td :
+        %td= info.phone_numbers_list
+    %tr
+      - unless info.full_address.blank?
+        %th Adresse
+        %td :
+        %td= info.full_address
+    %tr
+      - unless info.url.blank?
+        %th Site Web
+        %td :
+        %td= info.url

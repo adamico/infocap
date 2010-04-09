@@ -7,6 +7,8 @@
       &gt;
 
 %h1= h @category.name
+%h2= "(#{h(@category.abbrev)})"
+= simple_format(@category.notes)
 
 - unless @category.children.empty?
   %ul#submenu
@@ -17,6 +19,13 @@
   %ul#infos
     = render @category.infos
 
+%p
+  = link_to "Rajouter une info", new_category_info_path(@category)
+
+%p
+  = link_to "Rajouter une categorie", new_category_path
+
+%hr
 %p
   = link_to "Edit", edit_category_path(@category)
   |

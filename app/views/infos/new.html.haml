@@ -1,5 +1,6 @@
-- title "New Info"
+- title "Nouvelle info pour :"
+%h2= @category.name
 
 = render :partial => "form"
 
-%p= link_to "Back to List", infos_path
+%p= link_to "Retour à #{@category.name}", category_infos_path(@category)

@@ -9,6 +9,8 @@ end
 
 
 
+
+
 # == Schema Information
 #
 # Table name: categories
@@ -18,5 +20,7 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  parent_id  :integer
+#  abbrev     :string(255)
+#  notes      :text
 #
 

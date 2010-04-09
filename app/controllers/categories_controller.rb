@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_filter :find_category, :except => [:index, :new, :create]
   def index
-    @categories = Category.all
+    @categories = Category.all(:order => "parent_id")
   end
   
   def show

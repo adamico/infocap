@@ -7,6 +7,8 @@ two:
 
 
 
+
+
 # == Schema Information
 #
 # Table name: categories
@@ -16,5 +18,7 @@ two:
 #  created_at :datetime
 #  updated_at :datetime
 #  parent_id  :integer
+#  abbrev     :string(255)
+#  notes      :text
 #
 

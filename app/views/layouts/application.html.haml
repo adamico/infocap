@@ -12,7 +12,11 @@
   
   %body
     #header
-      = link_to "InfoCAP", root_path
+      %h1= link_to "InfoCAP", root_path
+      %ul#menu
+        - for category in Category.roots
+          %li
+            = link_to h(category.abbrev), category
     #container
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

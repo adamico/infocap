@@ -1,10 +1,14 @@
-- semantic_form_for @info do |f|
+- semantic_form_for [@info.category, @info] do |f|
   - f.inputs do
     = f.input :name
-    = f.input :sub_category, :label => "Sous-catégorie"
-    = f.input :new_sub_category_name, :label => "Sous-catégorie"
+    %li.select
+      = f.label :category_id, "Parent"
+      = f.collection_select :category_id, Category.all(:order => 'name'), :id, :abbrev, :include_blank => true
     = f.input :notes
     = f.input :url
+
+  - f.inputs :name => 'Interlocuteur' do
+    = f.input :person, :label => "Nom"
 
   - f.inputs :name => "Téléphones" do
     = f.input :telephone, :label => "Téléphone"
@@ -16,6 +20,5 @@
     = f.input :cp
     = f.input :ville
 
-   
   - f.buttons do
     = f.commit_button "Submit"

@@ -3,7 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def index
-    @themes = Theme.all
   end
 
 end

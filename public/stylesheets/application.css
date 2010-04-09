@@ -13,13 +13,17 @@ a {
   height: 0;
   overflow: hidden; }
 
-#container {
+#header, #container {
   width: 75%;
   margin: 0 auto;
   background: #fff;
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px; }
+
+#header {
+  overflow: hidden;
+  padding: 0px 40px; }
 
 #flash_notice,
 #flash_error {
@@ -44,23 +48,47 @@ a {
   padding-bottom: 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0; }
-#errorExplanation h2 {
-  text-align: left;
-  padding: 5px 5px 5px 15px;
-  margin: 0;
-  font-weight: bold;
-  font-size: 12px;
-  background-color: #c00;
-  color: #fff; }
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 8px; }
-#errorExplanation ul {
-  margin: 2px 24px; }
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: disc; }
+  #errorExplanation h2 {
+    text-align: left;
+    padding: 5px 5px 5px 15px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #c00;
+    color: #fff; }
+  #errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 8px; }
+  #errorExplanation ul {
+    margin: 2px 24px; }
+    #errorExplanation ul li {
+      font-size: 12px;
+      list-style: disc; }
 
-/* My personal */
-table#info_details tbody tr th { text-align: right;}
+#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%; }
+  #menu li {
+    margin: 0 2px;
+    padding: 0;
+    float: left; }
+    #menu li a {
+      display: block;
+      padding: 4px 8px;
+      text-decoration: none;
+      border: solid 1 px black;
+      color: black;
+      background-color: #AEBBE2; }
+      #menu li a:hover {
+        color: white;
+        background-color: #4A63B8; }
+
+table#info_details th {
+  text-align: right; }
+
+table th {
+  text-align: left; }

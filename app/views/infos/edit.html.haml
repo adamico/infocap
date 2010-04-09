@@ -1,7 +1,6 @@
-- title "Editing #{@info.name}"
+- title "Modification de #{@info.name}"
+%h2= "(#{@info.category.name})"
 
 = render :partial => "form"
 
-%p
-  = link_to "Show", @info
-  = link_to "View All", infos_path
+%p= link_to "Retour à #{@info.category.name}", category_path(@info.category)
