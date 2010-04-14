@@ -42,6 +42,7 @@ class Info < ActiveRecord::Base
     string.join(' ')
   end
 
+  private
   def create_category_from_name
     create_category(:name => new_category_name) unless new_category_name.blank?
   end

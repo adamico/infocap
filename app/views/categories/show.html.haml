@@ -7,7 +7,7 @@
       &gt;
 
 %h1= h @category.name
-%h2= "(#{h(@category.abbrev)})"
+%h2= "(#{h(@category.full_abbrev)})"
 = simple_format(@category.notes)
 
 - unless @category.children.empty?

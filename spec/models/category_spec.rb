@@ -1,8 +1,24 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Category do
-  it "should be valid" do
-    Category.new.should be_valid
+  before(:each) do
+    @category = Factory.build(:category, :name => "value_for_name")
+  end
+  it "should be valid with name" do
+    @category.should be_valid
+  end
+  describe "#full_abbrev" do
+    before(:each) do
+      @parent = Factory(:category, :name => "parent", :abbrev => "P")
+      @grand_parent = Factory(:category, :name => "grand_parent", :abbrev => "GP")
+      @parent.parent = @grand_parent
+    end
+    it "should append abbrev value to #parent.abbrev" do
+      @category.abbrev = "S"
+      @category.save
+      @category.parent = @parent
+      @category.full_abbrev.should == "GP-P-S"
+    end
   end
 end
 
