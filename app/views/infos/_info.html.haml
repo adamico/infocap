@@ -1,8 +1,10 @@
 %li
+  - info_state(info)
   %h3{:style => "display: inline;"}= h info.name
-  = link_to "Edit", edit_category_info_path(@category, info)
-  |
-  = link_to "Destroy", [@category, info], :confirm => 'Are you sure?', :method => :delete
+  %ul.actions
+    %li= link_to "Edit", edit_category_info_path(@category, info)
+    %li= link_to "Destroy", [@category, info], :confirm => 'Are you sure?', :method => :delete
+    - state_actions(info)
 
   %table#info_details
     %tr

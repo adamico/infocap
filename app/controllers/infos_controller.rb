@@ -2,6 +2,24 @@ class InfosController < ApplicationController
   before_filter :find_info, :except => [:index, :new, :create]
   before_filter :find_category, :except => [:edit, :update, :destroy]
 
+  def verifier
+    @info.verifier!
+    flash[:notice] = "L'info a été contrôlée."
+    redirect_to category_url(@info.category_id)
+  end
+
+  def disable
+    @info.disable!
+    flash[:notice] = "L'info a été archivée."
+    redirect_to category_url(@info.category_id)
+  end
+
+  def suspend
+    @info.suspend!
+    flash[:notice] = "L'info a été mise en attente."
+    redirect_to category_url(@info.category_id)
+  end
+
   def index
     @infos = @category.infos # || Info.all
   end

@@ -9,6 +9,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: infos
@@ -27,5 +28,6 @@ end
 #  url         :string(255)
 #  category_id :integer
 #  person      :string(255)
+#  state       :string(255)
 #
 

@@ -1,4 +1,24 @@
 class Info < ActiveRecord::Base
+  include AASM
+  aasm_column :state
+  aasm_initial_state :unverified
+
+  aasm_state :verified
+  aasm_state :unverified
+  aasm_state :invalid
+
+  aasm_event :verifier do
+    transitions :to => :verified, :from => :unverified
+  end
+
+  aasm_event :suspend do
+    transitions :to => :unverified, :from => :invalid
+  end
+
+  aasm_event :disable do
+    transitions :to => :invalid, :from => :verified
+  end
+
   validates_presence_of :name
 
   belongs_to :category
@@ -30,6 +50,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: infos
@@ -48,5 +69,6 @@ end
 #  url         :string(255)
 #  category_id :integer
 #  person      :string(255)
+#  state       :string(255)
 #
 

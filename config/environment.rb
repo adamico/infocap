@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
 
   config.gem 'formtastic'
   config.gem "acts_as_tree"
+  config.gem 'rubyist-aasm', :version => '> 2.0.2', :lib => 'aasm', :source => "http://gems.github.com"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

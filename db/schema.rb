@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100407151047) do
+ActiveRecord::Schema.define(:version => 20100414134914) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "name"
+    t.string   "line1"
+    t.string   "line2"
+    t.string   "ville"
+    t.integer  "cp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -34,17 +44,26 @@ ActiveRecord::Schema.define(:version => 20100407151047) do
     t.string   "url"
     t.integer  "category_id"
     t.string   "person"
+    t.string   "state"
   end
 
-  create_table "sub_categories", :force => true do |t|
+  create_table "ownerships", :force => true do |t|
+    t.integer "information_id"
+    t.string  "information_type"
+    t.integer "category_id"
+  end
+
+  create_table "phone_numbers", :force => true do |t|
     t.string   "name"
-    t.integer  "category_id"
+    t.string   "number"
+    t.string   "nature"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "themes", :force => true do |t|
+  create_table "urls", :force => true do |t|
     t.string   "name"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
